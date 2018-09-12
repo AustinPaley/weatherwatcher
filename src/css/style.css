@@ -16,6 +16,40 @@
   opacity: 0.2;
   overflow: hidden; }
 
+.MainInput {
+  height: 100%;
+  width: 100%; }
+  .MainInput__form {
+    height: 20rem;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    opacity: .3;
+    border-radius: 3px; }
+    .MainInput__form__h2 {
+      color: #fff;
+      margin-top: 4.5rem; }
+    .MainInput__form__group {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .MainInput__form__group-input {
+        font-size: 1.5rem;
+        border-radius: 3px;
+        border: none;
+        border-bottom: 3px solid transparent;
+        outline: none; }
+        .MainInput__form__group-input::placeholder {
+          text-align: center; }
+        .MainInput__form__group-input:focus {
+          box-shadow: 0 1rem 2rem -0.7rem rgba(0, 128, 0, 0.9); }
+        .MainInput__form__group-input:focus:invalid {
+          box-shadow: 0 1rem 2rem -0.7rem rgba(255, 0, 0, 0.9); }
+
 .App {
   text-align: center; }
 

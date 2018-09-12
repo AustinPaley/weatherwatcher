@@ -4,6 +4,7 @@ import snow from './img/snow.mp4'
 import './css/style.css';
 import * as Zipcodes from './zipcodes/zip.json';
 import FetchAdapters from './adapters/FetchAdapters.js';
+import MainInput from './components/MainInput.js';
 
 class App extends Component {
   constructor(props){
@@ -28,6 +29,7 @@ class App extends Component {
               Your browser is not supported!
             </video>
           </div>
+        <MainInput/>
       </div>
     );
   }
