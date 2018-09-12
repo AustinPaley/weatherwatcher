@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import snow from './img/snow.mp4'
+import {connect} from 'react-redux';
+import snow from './img/snow.mp4';
 import './css/style.css';
 import * as Zipcodes from './zipcodes/zip.json';
 import FetchAdapters from './adapters/FetchAdapters.js';
@@ -21,6 +22,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props.zip)
     return (
       <div className="App">
           <div className="bg-video">
@@ -35,4 +37,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    zip: state.zip.zip
+  }
+}
+
+export default connect(mapStateToProps, null)(App);
