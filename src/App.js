@@ -22,7 +22,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.zip)
     return (
       <div className="App">
           <div className="bg-video">
@@ -31,7 +30,11 @@ class App extends Component {
               Your browser is not supported!
             </video>
           </div>
-        <MainInput/>
+        {this.props.zip.length < 5 ?
+          <MainInput/>
+        :
+          null
+        }
       </div>
     );
   }

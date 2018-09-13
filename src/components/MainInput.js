@@ -5,6 +5,9 @@ import { addZip } from '../actions'
 class MainInput extends React.Component{
   constructor(props){
     super(props)
+    this.state = {
+      zips: {}
+    }
   }
 
   zipChange = (event) =>{
@@ -13,14 +16,14 @@ class MainInput extends React.Component{
 
   render(){
     return(
-      <div className="MainInput">
-        <form className="MainInput__form">
-          <h2 className="MainInput__form__h2">To Get Started, Enter a Zipcode</h2>
-          <div className="MainInput__form__group">
-            <input type="text" id="zipinput" className="MainInput__form__group-input" placeholder="Enter Zip Code" pattern="[0-9]{5}" required onChange={this.zipChange} />
-          </div>
-        </form>
-      </div>
+        <div className="MainInput">
+          <form className="MainInput__form">
+            <h2 className="MainInput__form__h2">To Get Started, Enter a Zipcode</h2>
+            <div className="MainInput__form__group">
+              <input type="text" id="zipinput" className="MainInput__form__group-input" placeholder="Enter Zip Code" pattern="[0-9]{5}" required onChange={this.zipChange} />
+            </div>
+          </form>
+        </div>
     )
   }
 }
@@ -33,4 +36,10 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(MainInput)
+const mapStateToProps = state => {
+  return {
+    zip: state.zip.zip
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainInput)
