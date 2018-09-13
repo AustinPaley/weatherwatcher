@@ -11,3 +11,10 @@ export function deleteZip(){
     payload: {zip: ""}
   }
 }
+
+export function addCurrentWeather(weather){
+  return {
+    type: 'ADD_CURRENT_WEATHER',
+    payload: {currentWeather: weather}
+  }
+}
