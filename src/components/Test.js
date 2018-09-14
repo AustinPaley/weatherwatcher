@@ -19,12 +19,12 @@ class Test extends Component {
     if (this.props.zip.length === 5) {
       let zipObj = this.props.zips.locations.find(zip=>zip['ZIP'] === this.props.zip)
       if (zipObj) {
-        this.setState({fetching:true})
-        fetch(`http://localhost:8080/https://api.darksky.net/forecast/${key}/${zipObj['LAT']},${zipObj['LNG']}`)
+        // this.setState({fetching:true})
+        fetch(`http://localhost:9000/https://api.darksky.net/forecast/${key}/${zipObj['LAT']},${zipObj['LNG']}`)
           .then(response => response.json())
           .then(data=> {
             console.log(data)
-            this.setState({fetching:false})
+            // this.setState({fetching:false})
           });
       } else {
         console.log('zip code could not be found')

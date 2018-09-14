@@ -6,6 +6,7 @@ import './css/style.css';
 import * as Zipcodes from './zipcodes/zip.json';
 import FetchAdapters from './adapters/FetchAdapters.js';
 import MainInput from './components/MainInput.js';
+import Test from './components/Test'
 
 class App extends Component {
   constructor(props){
@@ -35,6 +36,7 @@ class App extends Component {
         :
           null
         }
+        <Test zips={this.state.zips}/>
       </div>
     );
   }
